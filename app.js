@@ -5,6 +5,10 @@ root.render(React.createElement(App));
 
 let counter = 1;
 
+function handleClick(){
+  console.log(counter)
+}
+
 function App() {
   return React.createElement(
     "div",
@@ -21,7 +25,9 @@ function App() {
 }
 
 function Component(props) {
-  return React.createElement("p", null, props.name);
+  return React.createElement("p", {className: 'redText'}, props.name, 
+  React.createElement("button", {onClick: handleClick}, "click"));
+
 }
 
 function Counter(props) {
